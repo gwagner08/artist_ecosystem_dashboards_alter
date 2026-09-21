@@ -1,0 +1,15 @@
+# Secrets. Never commit a filled-in .env.
+.env
+.env.*
+!.env.example
+
+node_modules/
+dist/
+
+# Written by tools/sprout-keys.mjs and tools/make-roster.mjs
+tools/sprout-keys.txt
+sprout-keys.txt
+config/artists.json.backup
+
+# Local Accounts-tab corrections (server/src/overrides.ts default path)
+config/account-overrides.json

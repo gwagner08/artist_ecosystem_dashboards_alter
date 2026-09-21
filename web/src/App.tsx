@@ -34,7 +34,7 @@ const daysAgo = (n: number) => new Date(Date.now() - n * 86_400_000).toISOString
 export default function App() {
   const [roster, setRoster] = useState<RosterEntry[]>([])
   const [providers, setProviders] = useState<ProviderStatus[]>([])
-  const [groupName, setGroupName] = useState('Mick Management')
+  const [groupName, setGroupName] = useState('Alter Music')
   const [diagnostics, setDiagnostics] = useState<RosterDiagnostics | null>(null)
   const [slug, setSlug] = useState<string | null>(null)
   const [days, setDays] = useState(90)
@@ -73,7 +73,7 @@ export default function App() {
         setProviders(r.providers)
         setDiagnostics(r.diagnostics ?? null)
         const sprout = r.providers.find((p) => p.provider === 'sprout')
-        if (sprout) setGroupName(sprout.detail.match(/\(([^)]+)\)/)?.[1] ?? 'Mick Management')
+        if (sprout) setGroupName(sprout.detail.match(/\(([^)]+)\)/)?.[1] ?? 'Alter Music')
       })
       .catch((e) => setError(e.message))
       .finally(() => setLoading(false))

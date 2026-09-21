@@ -32,7 +32,7 @@ export function Roster({ artists, onOpen, groupName, diagnostics, onChanged }: {
       </div>
 
       {diagnostics?.unassigned?.length ? (
-        <Unassigned diagnostics={diagnostics} onChanged={onChanged} />
+        <Unassigned diagnostics={diagnostics} onChanged={onChanged} groupName={groupName} />
       ) : null}
 
       <ChartmetricGaps artists={artists} />
@@ -229,7 +229,8 @@ function EmptyRoster({ groupName, diagnostics }: { groupName: string; diagnostic
  * it survives restarts and stops the same account needing a config edit. Attaching
  * to "New artist" creates a roster row from that account.
  */
-function Unassigned({ diagnostics, onChanged }: {
+function Unassigned({ diagnostics, onChanged, groupName }: {
+  groupName: string
   diagnostics: RosterDiagnostics
   onChanged?: () => void
 }) {
@@ -260,7 +261,7 @@ function Unassigned({ diagnostics, onChanged }: {
 
   return (
     <div className="banner">
-      <strong>{rows.length} account{rows.length === 1 ? '' : 's'} in {'\u2018'}Mick Management{'\u2019'} belong to no artist</strong>{' '}
+      <strong>{rows.length} account{rows.length === 1 ? '' : 's'} in {'\u2018'}{groupName}{'\u2019'} belong to no artist</strong>{' '}
       and are excluded from every number.
       {' '}
       <button className="linkish" style={{ textDecoration: 'underline' }} onClick={() => setOpen((v) => !v)}>

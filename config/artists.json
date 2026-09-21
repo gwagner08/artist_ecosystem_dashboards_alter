@@ -20,110 +20,24 @@
   "excludeProfileNames": [],
   "artists": [
     {
-      "name": "Alessi Rose",
-      "sproutProfileNames": [
-        "King Alessi",
-        "king alessi",
-        "alessi rose"
-      ],
-      "chartmetricArtistId": 3535851
+      "name": "Gus Dapperton",
+      "chartmetricArtistId": 471312
     },
     {
-      "name": "Brett Dennen",
-      "chartmetricArtistId": 2559
+      "name": "Ruth B."
     },
     {
-      "name": "Caamp",
-      "chartmetricArtistId": 65741
+      "name": "Naomi Scott",
+      "chartmetricArtistId": 4047
     },
     {
-      "name": "Chezile",
-      "chartmetricArtistId": 8381430
+      "name": "Brent de la Cruz"
     },
     {
-      "name": "David Gray",
-      "chartmetricArtistId": 380
+      "name": "Lia Lia"
     },
     {
-      "name": "Eggy",
-      "chartmetricArtistId": 1538501
-    },
-    {
-      "name": "Hamilton Leithauser",
-      "chartmetricArtistId": 262842
-    },
-    {
-      "name": "Jake Minch",
-      "chartmetricArtistId": 10504212
-    },
-    {
-      "name": "Josh Conway",
-      "chartmetricArtistId": 15919569
-    },
-    {
-      "name": "Julien Baker",
-      "sproutProfileNames": [
-        "Julien Rose Baker",
-        "julienbakerandtorres",
-        "Julien Baker and Torres"
-      ],
-      "chartmetricArtistId": 5387
-    },
-    {
-      "name": "Leon Bridges",
-      "chartmetricArtistId": 5124
-    },
-    {
-      "name": "Maggie Rogers",
-      "chartmetricArtistId": 206605
-    },
-    {
-      "name": "Marlon Funaki",
-      "chartmetricArtistId": 3946377
-    },
-    {
-      "name": "Matchbox Twenty",
-      "chartmetricArtistId": 411
-    },
-    {
-      "name": "My Morning Jacket",
-      "chartmetricArtistId": 1355
-    },
-    {
-      "name": "Natalie Hemby",
-      "chartmetricArtistId": 228466
-    },
-    {
-      "name": "Ninajirachi",
-      "chartmetricArtistId": 506208
-    },
-    {
-      "name": "Not For Radio",
-      "chartmetricArtistId": 14184164
-    },
-    {
-      "name": "Ray LaMontagne",
-      "chartmetricArtistId": 2070
-    },
-    {
-      "name": "Sharon Van Etten",
-      "chartmetricArtistId": 3467
-    },
-    {
-      "name": "The 502s",
-      "chartmetricArtistId": 338349
-    },
-    {
-      "name": "The Backseat Lovers",
-      "chartmetricArtistId": 1099271
-    },
-    {
-      "name": "The Mar\u00edas",
-      "chartmetricArtistId": 653847
-    },
-    {
-      "name": "The Walkmen",
-      "chartmetricArtistId": 470385
+      "name": "Chalk"
     }
   ]
 }
