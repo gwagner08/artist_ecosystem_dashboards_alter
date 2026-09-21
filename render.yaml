@@ -1,0 +1,57 @@
+# Render blueprint. Either commit this and use "New > Blueprint", or create a Web
+# Service by hand with the same build/start commands and env vars.
+#
+# The server serves the built SPA from dist/web in production, so this is one
+# service, not two. API keys stay server-side.
+services:
+  - type: web
+    name: artist-ecosystem-dashboards
+    runtime: node
+    plan: starter
+    # --include=dev is required: vite and typescript are devDependencies and the
+    # build needs them. Render sets NODE_ENV=production, which otherwise skips them.
+    buildCommand: npm ci --include=dev && npm run build
+    startCommand: npm start
+    healthCheckPath: /api/health
+
+    # Manual account corrections (Accounts tab) are written to a JSON file.
+    # Without this disk they are wiped on every deploy.
+    #
+    # Disks require a paid instance. To deploy on the FREE tier instead:
+    #   1. delete this whole `disk:` block
+    #   2. change `plan: starter` above to `plan: free`
+    #   3. delete the OVERRIDES_PATH env var below
+    # Everything works; only Accounts-tab corrections reset on each deploy, and a
+    # free service sleeps after ~15 minutes idle so the first load is slow.
+    disk:
+      name: overrides
+      mountPath: /var/data
+      sizeGB: 1
+
+    envVars:
+      - key: NODE_VERSION
+        value: "22"
+      - key: OVERRIDES_PATH
+        value: /var/data/account-overrides.json
+      - key: CACHE_TTL_SECONDS
+        value: "900"
+      - key: SPROUT_GROUP_NAME
+        value: Mick Management
+
+      # Set these in the Render dashboard, not here - sync:false keeps them out of git.
+      - key: SPROUT_API_TOKEN
+        sync: false
+      - key: SPROUT_CUSTOMER_ID
+        sync: false
+      - key: SPROUT_GROUP_ID
+        sync: false
+      - key: SPROUT_ARTIST_GROUP_ID
+        sync: false
+      - key: SPROUT_FAN_GROUP_ID
+        sync: false
+      - key: CHARTMETRIC_REFRESH_TOKEN
+        sync: false
+      - key: REALCOUNT_CLIENT_ID
+        sync: false
+      - key: REALCOUNT_CLIENT_SECRET
+        sync: false

@@ -1,0 +1,41 @@
+{
+  "_comment": [
+    "Copy to config/artists.json. This file is gitignored - it maps your roster.",
+    "",
+    "Sprout knows profiles, not artists. The app folds profiles into artists by",
+    "matching profile names, which handles most of the roster automatically. Use",
+    "this file for the two things it cannot do:",
+    "  1. pin profiles whose handles don't match across networks",
+    "  2. attach Chartmetric and RealCount ids, which Sprout has no idea about",
+    "",
+    "Run `npm run verify:apis` first - it prints your group IDs, every profile,",
+    "and which artists are missing ids."
+  ],
+
+  "excludeProfileNames": [
+    "Mick Management",
+    "Firebird Music"
+  ],
+
+  "artists": [
+    {
+      "name": "Example Artist",
+      "slug": "example-artist",
+      "sproutProfileNames": ["exampleartist", "Example Artist Official", "exampleartistmusic"],
+      "sproutProfileIds": [1234567],
+
+      "_accountTypes": "Only needed when the automatic classification gets it wrong. The Accounts tab in the UI does the same thing without editing this file.",
+      "fanProfileIds": [7654321],
+      "artistProfileIds": [1234567],
+
+      "chartmetricArtistId": 123456,
+      "realcountArtistId": "00000000-0000-0000-0000-000000000000",
+      "realcountArtistName": "Example Artist"
+    },
+    {
+      "name": "Second Artist",
+      "chartmetricArtistId": 654321,
+      "realcountArtistId": null
+    }
+  ]
+}
