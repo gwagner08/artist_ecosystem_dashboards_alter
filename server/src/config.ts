@@ -66,12 +66,12 @@ export const config = {
     token: process.env.SPROUT_API_TOKEN?.trim() || null,
     customerId: num(process.env.SPROUT_CUSTOMER_ID) ?? null,
     /**
-     * The Alter Music Group group. Every profile outside it is ignored.
+     * The Alter Music group. Every profile outside it is ignored.
      * Accepts several IDs, comma-separated, for parent/sub-group setups.
      * An empty value reads every profile on the account.
      */
     groupIds: numList(process.env.SPROUT_GROUP_ID),
-    groupName: process.env.SPROUT_GROUP_NAME?.trim() || 'Alter Music Group',
+    groupName: process.env.SPROUT_GROUP_NAME?.trim() || 'Alter Music',
     /**
      * Optional sub-groups that separate artist-owned from fan-run accounts.
      * If your Sprout group already splits them this way, set these and the

@@ -8,7 +8,7 @@ One view of an artist across the three systems that each hold a piece of the pic
 | **Chartmetric** | Consumption — Spotify monthly listeners, followers, listener geography |
 | **RealCount** | Live — ticket counts, capacity, sell-through by show |
 
-Sprout is scoped to a single group (Alter Music Group), and everything is grouped **by
+Sprout is scoped to a single group (Alter Music), and everything is grouped **by
 artist** rather than by profile. Inside each artist you can toggle between **all
 accounts, artist-owned, and fan accounts**, filter by platform, and turn individual
 accounts in or out of the ecosystem.
@@ -101,7 +101,7 @@ other two keep serving demo data until you add them.
    npm run verify:apis
    ```
    This is the important step. It reads only, and it reports:
-   - your Sprout customer IDs and every group ID + name, so you can find Alter Music Group's
+   - your Sprout customer IDs and every group ID + name, so you can find Alter Music's
    - how many profiles are in that group, by network
    - **which metrics your Sprout plan actually supports**, probed one at a time
    - how profiles folded into artists, and which artists are missing IDs

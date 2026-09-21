@@ -274,7 +274,7 @@ export async function listClients(): Promise<Array<{ customer_id: number; name: 
  * Profiles in the configured group(s). The API has no group filter on the metadata
  * endpoint, so we filter on the `groups` array each profile carries.
  *
- * Accepts several group IDs because an "Alter Music Group" parent group can hold its
+ * Accepts several group IDs because an "Alter Music" parent group can hold its
  * profiles only in sub-groups, in which case filtering on the parent alone matches
  * nothing.
  */

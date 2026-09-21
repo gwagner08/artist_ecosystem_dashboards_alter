@@ -8,7 +8,7 @@
  *
  * It asks for your Sprout API token (input is masked), then prints:
  *   - your customer ID
- *   - every group ID and name, so you can pick Alter Music Group
+ *   - every group ID and name, so you can pick Alter Music
  *   - how many profiles are in each group, and which networks
  *   - a ready-to-paste .env block
  *
