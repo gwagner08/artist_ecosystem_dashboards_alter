@@ -2,7 +2,7 @@
  * Builds the artist roster.
  *
  * Sprout has no notion of "artist" - it has profiles in groups. We scope to the
- * Mick Management group, then fold that group's profiles into artists by matching
+ * Alter Music Group group, then fold that group's profiles into artists by matching
  * profile names, because a roster of 40 profiles is really ~14 artists x 3 networks.
  *
  * Name matching is a heuristic and it will get some edge cases wrong (an artist whose

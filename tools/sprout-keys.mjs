@@ -8,7 +8,7 @@
  *
  * It asks for your Sprout API token (input is masked), then prints:
  *   - your customer ID
- *   - every group ID and name, so you can pick Mick Management
+ *   - every group ID and name, so you can pick Alter Music Group
  *   - how many profiles are in each group, and which networks
  *   - a ready-to-paste .env block
  *
@@ -166,16 +166,16 @@ async function main() {
 
     const sorted = [...groups].sort((a, b) => a.name.localeCompare(b.name))
 
-    // Several groups can contain "Mick" (a parent plus artist/fan sub-groups).
+    // Several groups can contain "Alter" (a parent plus artist/fan sub-groups).
     // The parent is the shortest name, and the one to point at.
-    const mick = groups
-      .filter((g) => /mick/i.test(g.name))
+    const alter = groups
+      .filter((g) => /alter/i.test(g.name))
       .sort((a, b) => a.name.length - b.name.length)[0]
 
     for (const g of sorted) {
       const mine = profiles.filter((p) => (p.groups ?? []).includes(g.group_id))
       const nets = [...new Set(mine.map((p) => p.network_type))].sort()
-      const hint = mick && g.group_id === mick.group_id ? green('   <- probably this one') : ''
+      const hint = alter && g.group_id === alter.group_id ? green('   <- probably this one') : ''
       say(`  ${String(g.group_id).padEnd(12)} ${String(mine.length).padStart(8)}  ${g.name}${hint}`)
       if (mine.length) say(dim(`  ${' '.repeat(22)}${nets.join(', ')}`))
     }
@@ -184,9 +184,9 @@ async function main() {
     say('')
     say('  SPROUT_API_TOKEN=<the token you just pasted>')
     say(`  SPROUT_CUSTOMER_ID=${client.customer_id}`)
-    if (mick) {
-      say(`  SPROUT_GROUP_ID=${mick.group_id}`)
-      say(`  SPROUT_GROUP_NAME=${mick.name}`)
+    if (alter) {
+      say(`  SPROUT_GROUP_ID=${alter.group_id}`)
+      say(`  SPROUT_GROUP_NAME=${alter.name}`)
     } else {
       say('  SPROUT_GROUP_ID=<pick a GROUP ID from the table above>')
       say("  SPROUT_GROUP_NAME=<that group's name>")

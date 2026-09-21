@@ -36,7 +36,7 @@ services:
       - key: CACHE_TTL_SECONDS
         value: "900"
       - key: SPROUT_GROUP_NAME
-        value: Mick Management
+        value: Alter Music Group
 
       # Set these in the Render dashboard, not here - sync:false keeps them out of git.
       - key: SPROUT_API_TOKEN
